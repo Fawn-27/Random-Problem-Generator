@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Random Problem Generator</title>
+    <script src="problem.js"></script>
+    <meta
+      name="description"
+      content="generates math problem for KG to 2nd graders"
+    />
+    <meta name="author" content="Fawn" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="icon.jpg" />
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+      <audio id="audio" src="success-1-6297.mp3" preload></audio>
+      <audio id="audio2" src="error-2-36058.mp3" preload></audio>
+    <div id="container">
+      <h1>Math Problems</h1>
+      
+      
+      <div id="expression_box">
+        <pre id="expression"></pre>
+      </div>
+      <script src="problem.js"></script>
+
+      <div class="form">
+        <form name="calculator" id="calculator">
+          <input id="answer" type="text" name="answer" />
+          <div id="grid_container">
+          <!--<br /><br />-->
+          <input
+            type="button"
+            value="7"
+            onclick="calculator.answer.value += '7';"
+          />
+          <input
+            type="button"
+            value="8"
+            onclick="calculator.answer.value += '8';"
+          />
+          <input
+            type="button"
+            value="9"
+            onclick="calculator.answer.value += '9';"
+          />
+          <!--<br /><br />-->
+          <input
+            type="button"
+            value="4"
+            onclick="calculator.answer.value += '4';"
+          />
+          <input
+            type="button"
+            value="5"
+            onclick="calculator.answer.value += '5';"
+          />
+          <input
+            type="button"
+            value="6"
+            onclick="calculator.answer.value += '6';"
+          />
+          <!--<br /><br />-->
+          <input
+            type="button"
+            value="1"
+            onclick="calculator.answer.value += '1';"
+          />
+          <input
+            type="button"
+            value="2"
+            onclick="calculator.answer.value += '2';"
+          />
+          <input
+            type="button"
+            value="3"
+            onclick="calculator.answer.value += '3';"
+          />
+          <!--<br /><br />-->
+          
+          
+          <!--<br /><br />-->
+
+          <input
+            type="button"
+            value="🗑"
+            id="delete"
+                 class="special"
+            onclick="calculator.answer.value = calculator.answer.value.substring(0, calculator.answer.value.length - 1)"
+          />
+            <input
+            type="button"
+            value="0"
+            onclick="calculator.answer.value += '0';"
+          />
+            <input type="submit" value="✔" id="equals" class="special"/>
+          </div>
+        </form>
+        <!--<br />-->
+      </div>
+      </div>
+    <script>
+      var formElement = document.querySelector("#calculator");
+      var equalsElement = document.querySelector("#equals");
+      var audio = document.getElementById("audio");
+      var audio2 = document.getElementById("audio2");
+      formElement.addEventListener("submit", handleFormSubmit);
+
+      function reload() {
+        window.location.reload();
+      }
+      /*<input id="answer" type="text" name="answer" style="width: 435px" />*/
+      function handleFormSubmit(event) {
+        // Stops the page from reloading
+        event.preventDefault();
+        // Click the equal key
+        equalsElement.click();
+        var answer = document.getElementById("answer").value;
+
+        if (answer == solution) {
+          audio.currentTime = 0;
+          document.getElementById("answer").value = "CORRECT";
+          audio.play();
+          setTimeout(reload, 3000); //three seconds
+        } else {
+          audio2.currentTime = 0;
+          audio2.play();
+        }
+      }
+    </script>
+  </body>
+</html>
