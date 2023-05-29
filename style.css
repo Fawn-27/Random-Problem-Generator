@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&family=Sniglet&display=swap');
+html {
+  background-color: white;
+  text-align: center;
+  background: url(bg/bg4.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Sniglet', cursive;
+}
+
+h1 {
+  color: #785216;
+  font-size:36px;
+  font-family: 'Sniglet', cursive;
+  margin-top:20%;
+  line-height: 1;
+}
+
+pre {  
+  color: #785216;
+  font-family: 'Sniglet', cursive;
+  font-size:32px;
+}
+
+input {
+  width: 8vh;
+  height: 8vh;
+  font-size:27px;
+  font-family: 'Sniglet', cursive;
+  background-color:#965F0C;
+  color:#FCEBCF;
+  text-align: center;
+  line-height: 1em;
+  border:2px #EBC17F groove;
+  border-radius:10%;
+}
+
+input:hover{
+  background-color:#c67600;
+}
+
+#grid_container {
+  box-sizing: border-box;
+  margin: 20px auto 80px auto;
+  width: 50vh;
+  height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap:13%;
+  align-content: stretch;
+    justify-content: center;
+}
+
+
+#answer{
+  width:37vh;
+  margin-bottom:4%;
+  height:28px;
+  background-color:#EBC17F;
+  border-radius:0%;
+  color:#785216;
+}
+
+#container{
+  width:500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
